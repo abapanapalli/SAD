@@ -74,6 +74,16 @@ public class MasterSong {
         for (Song song: songs) {
             System.out.println(song.getTitle() + ", " + song.getArtist() + ", " + song.getDuration() + ", " + song.getTempo() + ", " + song.getValence());
         }
-
     }
+
+//    public void sortBPM() {
+//        int min = songs.getTempo(0);
+//        for (int i = 1; i < songs.size(); i++) {
+//            if(songs.get(i) < min) {
+//                min = songs.get(i);
+//            }
+//        }
+//        songs.remove((Integer) min);
+//        songs.add(0, min);
+//    }
 }
