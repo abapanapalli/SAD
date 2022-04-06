@@ -14,7 +14,7 @@ public class User {
     private double weightlbs;
     private int age;
     private int maxheartrate;
-    int height;
+    private int height;
     private int level;
     ActivityLevel stitch;
 
