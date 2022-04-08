@@ -76,6 +76,10 @@ public class MasterSong {
         }
     }
 
+    public ArrayList<Song> getSongs(){
+        return songs;
+    }
+
 //    public void sortBPM() {
 //        int min = songs.getTempo(0);
 //        for (int i = 1; i < songs.size(); i++) {
