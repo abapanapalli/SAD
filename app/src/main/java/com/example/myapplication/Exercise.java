@@ -16,6 +16,7 @@ public class Exercise {
     private User user;
     TypeofRun run;
     private MasterSong songs;
+    ArrayList<Song> songList;
 
     //Constructors
     public Exercise(User u, int lengthofrun)
@@ -28,7 +29,8 @@ public class Exercise {
     }
 
     ///Methods
-    public void setTypeofRun() {
+    public void setTypeofRun(TypeofRun userRun) {
+        run = userRun;
         switch(run){
             case BASE:
                 for (int i = 0; i < duration/8; i++) {
@@ -61,23 +63,33 @@ public class Exercise {
                     minutes[i] = user.getMaxHeartRate() * (0.7 - i * 0.2/(duration));
                 }
                 break;
-
         }
     }
 
-    public void getSongs() {
+    public void setSongs() {
+        songList = new ArrayList<Song>();
         for (int i = 0; i < minutes.length;) {
-            int fitIndex = 0;
+            double fitIndex = 0;
             double totalBPM = 0;
+            double fitNum = 0;
             for (Song song: songs.getSongs()) { // Modify the getSongs() and MasterSong class data so that it can be used more as a Controller Class
                 double length = song.getDuration();
                 for (int j = i; j < i + length; j++) {
                      totalBPM = totalBPM + minutes[j];
                 }
                 double avgBPM = totalBPM / duration;
-                double fitNum = song.getTempo() / avgBPM;
+                fitNum = song.getTempo() / avgBPM;
+                if ((1 - fitIndex) > fitNum) {
+                    fitIndex = fitNum;
+                    songList.add(song);
+                    i = i + duration;
+                }
             }
         }
+    }
+
+    public ArrayList<Song> getSongList() {
+        return songList;
     }
 
 //    public ArrayList<Song> setPlaylist(){
