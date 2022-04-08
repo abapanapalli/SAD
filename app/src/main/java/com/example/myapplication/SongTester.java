@@ -1,7 +1,5 @@
 package com.example.myapplication;
 
-// Note, this file runs correctly in Eclipse, but does not successfully run in android studio
-
 public class SongTester {
 
     public static void main(String[] args) {

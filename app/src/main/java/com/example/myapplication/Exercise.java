@@ -15,6 +15,7 @@ public class Exercise {
     private double[] minutes;
     private User user;
     TypeofRun run;
+    private MasterSong songs;
 
 
     //Constructors
@@ -23,6 +24,7 @@ public class Exercise {
         user = u;
         this.duration = lengthofrun;
         minutes = new double[lengthofrun];
+        songs.load("app/src/main/res/raw/clean_music_data.csv");;
     }
 
     ///Methods
@@ -63,10 +65,10 @@ public class Exercise {
         }
     }
 
-//    public void getSongs() {
-//
-//    }
-//
+    public void getSongs() {
+
+    }
+
 //    public ArrayList<Song> setPlaylist(){
 //
 //    }
