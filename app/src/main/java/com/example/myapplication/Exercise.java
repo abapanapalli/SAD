@@ -17,13 +17,13 @@ public class Exercise {
     TypeofRun run;
     private MasterSong songs;
 
-
     //Constructors
     public Exercise(User u, int lengthofrun)
     {
         user = u;
         this.duration = lengthofrun;
         minutes = new double[lengthofrun];
+        MasterSong songs = new MasterSong();
         songs.load("app/src/main/res/raw/clean_music_data.csv");;
     }
 
@@ -66,7 +66,18 @@ public class Exercise {
     }
 
     public void getSongs() {
-
+        for (int i = 0; i < minutes.length;) {
+            int fitIndex = 0;
+            double totalBPM = 0;
+            for (Song song: songs.getSongs()) { // Modify the getSongs() and MasterSong class data so that it can be used more as a Controller Class
+                double length = song.getDuration();
+                for (int j = i; j < i + length; j++) {
+                     totalBPM = totalBPM + minutes[j];
+                }
+                double avgBPM = totalBPM / duration;
+                double fitNum = song.getTempo() / avgBPM;
+            }
+        }
     }
 
 //    public ArrayList<Song> setPlaylist(){
