@@ -2,24 +2,41 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/Constraint Layout "
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityHome">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="290dp"
-        android:layout_height="74dp"
-        android:layout_marginStart="61dp"
-        android:layout_marginEnd="61dp"
-        android:layout_marginBottom="624dp"
-        android:autoText="false"
-        android:background="#6BF17F29"
-        android:text="Personal Record"
-        android:textAlignment="center"
-        android:textColor="#F96900"
-        android:textSize="35sp"
+    <LinearLayout
+        android:id="@+id/Linear Layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="-126dp">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="479dp"
+            android:layout_height="79dp"
+            android:layout_marginStart="61dp"
+            android:layout_marginEnd="61dp"
+            android:layout_marginBottom="86dp"
+            android:autoText="false"
+            android:background="#6BF17F29"
+            android:text="@string/app_name"
+            android:textAlignment="center"
+            android:textColor="#DD2C00"
+            android:textSize="35sp" />
+
+        <Spinner
+            android:id="@+id/ActivityLevel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/app_name"
+            android:minHeight="48dp" />
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

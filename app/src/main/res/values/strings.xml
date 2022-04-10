@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">My Application</string>
+    <string name="app_name">Personal Record</string>
+    <string-array name="ActivityLevel">
+        `<item>Light</item>
+         <item>Moderate</item>
+          <item>Frequent</item>
+    </string-array>
 </resources>
