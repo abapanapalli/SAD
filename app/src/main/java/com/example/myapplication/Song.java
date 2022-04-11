@@ -9,12 +9,14 @@ public class Song {
     private double duration; // How long the song runs for, measured in seconds
     private double tempo; // The number of beats per minute (bpm)
     private double valence; // Describes the musical positiveness conveyed by a track
+    final private int ID; // Keeps track of what song is being manipulated
 
     // Constructor
 
     // Constructs a Song object which contains five parameters (title, artist, duration, tempo, and valence)
 
-    public Song(String t, String a, double d, double bpm, double v) {
+    public Song(int id, String t, String a, double d, double bpm, double v) {
+        ID = id;
         title = t;
         artist = a;
         duration = d;
@@ -23,6 +25,15 @@ public class Song {
     }
 
     // Methods
+
+    /**
+     * Method which gets the ID of a song
+     * @return ID The ID of the song
+     */
+
+    public int getID() {
+        return ID;
+    }
 
     /**
      * Method which gets the title of a song

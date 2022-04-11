@@ -40,7 +40,7 @@ public class MasterSong {
             while(in.hasNextLine()) {
                 String line = in.nextLine();
                 String[] fields = line.split(",");
-                Song song = new Song(fields[1], fields[2], Double.parseDouble(fields[3]), Double.parseDouble(fields[4]), Double.parseDouble(fields[5]));
+                Song song = new Song(Integer.parseInt(fields[0]), fields[1], fields[2], Double.parseDouble(fields[3]), Double.parseDouble(fields[4]), Double.parseDouble(fields[5]));
                 songs.add(song);
             }
 
@@ -72,7 +72,7 @@ public class MasterSong {
 
     public void printSongs() {
         for (Song song: songs) {
-            System.out.println(song.getTitle() + ", " + song.getArtist() + ", " + song.getDuration() + ", " + song.getTempo() + ", " + song.getValence());
+            System.out.println(song.getID() + ", " + song.getTitle() + ", " + song.getArtist() + ", " + song.getDuration() + ", " + song.getTempo() + ", " + song.getValence());
         }
     }
 
