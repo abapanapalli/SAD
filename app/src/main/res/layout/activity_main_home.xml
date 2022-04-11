@@ -2,22 +2,24 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/Constraint Layout "
+    android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivityHome">
 
     <LinearLayout
-        android:id="@+id/Linear Layout"
+        android:id="@+id/LinearLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="701dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="-126dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/AppName"
             android:layout_width="479dp"
             android:layout_height="79dp"
             android:layout_marginStart="61dp"
@@ -30,13 +32,103 @@
             android:textColor="#DD2C00"
             android:textSize="35sp" />
 
-        <Spinner
-            android:id="@+id/ActivityLevel"
+        <TextView
+            android:id="@+id/AgeLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
-            android:minHeight="48dp" />
+            android:text="Input the following information:"
+            android:textSize="26sp" />
+
+        <EditText
+            android:id="@+id/editTextAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Age"
+            android:textSize="24sp" />
 
     </LinearLayout>
+
+    <Spinner
+        android:id="@+id/ActivityLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="484dp"
+        android:contentDescription="@string/app_name"
+        android:minHeight="48dp"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout"
+        tools:layout_editor_absoluteX="2dp" />
+
+    <EditText
+        android:id="@+id/editTextInches"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="84dp"
+        android:layout_marginTop="176dp"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="126dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Inches (in)"
+        app:layout_constraintBottom_toTopOf="@+id/ActivityLevel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/editTextFeet"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
+
+    <EditText
+        android:id="@+id/editTextFeet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginEnd="84dp"
+        android:layout_marginBottom="84dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:text="Feet (ft)"
+        app:layout_constraintBottom_toTopOf="@+id/ActivityLevelLabel"
+        app:layout_constraintEnd_toStartOf="@+id/editTextInches"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HeightLabel" />
+
+    <TextView
+        android:id="@+id/HeightLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="121dp"
+        android:layout_marginEnd="528dp"
+        android:text="Height"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextWeight" />
+
+    <EditText
+        android:id="@+id/editTextWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Weight (lbs)"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
+
+    <TextView
+        android:id="@+id/ActivityLevelLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="82dp"
+        android:text="Activity Level"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextFeet" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
