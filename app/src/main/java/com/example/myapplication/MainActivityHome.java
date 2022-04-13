@@ -6,10 +6,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class MainActivityHome extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+    int age, weight, heightft, heightin;
+    EditText ageInput;
+    EditText weightInput;
+    EditText heightftInput;
+    EditText heightinInput;
+
+    Button button;
+
+
     private Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +32,28 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
-        spinner.setOnItemSelectedListener(this);
+
+
+        ageInput = (EditText) findViewById(R.id.editTextAge);
+        weightInput = (EditText) findViewById(R.id.editTextWeight);
+        heightftInput = (EditText) findViewById(R.id.editTextFeet);
+        heightinInput = (EditText) findViewById(R.id.editTextInches);
+
+        button = (Button) findViewById(R.id.submitbutton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                age = Integer.valueOf(ageInput.getText().toString());
+                weight = Integer.valueOf(weightInput.getText().toString());
+                heightft = Integer.valueOf(heightftInput.getText().toString());
+                heightin = Integer.valueOf(heightinInput.getText().toString());
+
+                showToast(String.valueOf(age));
+                showToast(String.valueOf(weight));
+                showToast(String.valueOf(heightft));
+                showToast(String.valueOf(heightin));
+            }
+        });
     }
 
     @Override
@@ -33,5 +65,8 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+    private void showToast(String text){
+        Toast.makeText(MainActivityHome.this, text, Toast.LENGTH_SHORT).show();
     }
 }
