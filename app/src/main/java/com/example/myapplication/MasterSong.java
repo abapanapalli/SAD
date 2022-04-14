@@ -76,6 +76,18 @@ public class MasterSong {
         }
     }
 
+    public int findID(int inputID) {
+        int i = 0;
+        int finalVal = 0;
+        for (Song song: songs) {
+            if (song.getID() == inputID) {
+                finalVal = i;
+            }
+            i++;
+        }
+        return finalVal;
+    }
+
     public ArrayList<Song> getSongs(){
         return songs;
     }
