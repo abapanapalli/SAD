@@ -25,7 +25,7 @@ public class Exercise {
         duration = lengthofrun * 60;
         seconds = new double[lengthofrun * 60];
         songs = new MasterSong();
-        songs.load("/Users/abhinavb/AndroidStudioProjects/MyApplication/app/src/main/res/raw/clean_music_data.csv");
+        songs.load("app/src/main/res/raw/clean_music_data.csv");
     }
 
     ///Methods
