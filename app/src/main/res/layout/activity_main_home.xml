@@ -7,18 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".MainActivityHome">
 
+    <Button
+        android:id="@+id/submitbutton"
+        android:layout_width="168dp"
+        android:layout_height="72dp"
+        android:layout_marginStart="250dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="250dp"
+        android:background="#FF5722"
+        android:text="@string/submit_button"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
+
     <LinearLayout
         android:id="@+id/LinearLayout"
         android:layout_width="550dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.186">
 
         <TextView
             android:id="@+id/AppName"
@@ -27,7 +43,6 @@
             android:layout_marginStart="61dp"
             android:layout_marginEnd="61dp"
             android:layout_marginBottom="86dp"
-            android:autoText="false"
             android:background="#6BF17F29"
             android:text="@string/app_name"
             android:textAlignment="center"
@@ -38,7 +53,7 @@
             android:id="@+id/AgeLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Input the following information:"
+            android:text="@string/input_info"
             android:textSize="26sp" />
 
         <EditText
@@ -47,8 +62,9 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="number"
-            android:text="Age"
-            android:textSize="24sp" />
+            android:hint="@string/age_input"
+            android:textSize="24sp"
+            android:autofillHints="25" />
 
         <TextView
             android:id="@+id/ActivityLevelLabel"
@@ -56,14 +72,14 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="20dp"
-            android:text="Activity Level"
+            android:hint="@string/activity_level"
             android:textSize="24sp" />
 
         <Spinner
             android:id="@+id/ActivityLevel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/app_name"
+            android:contentDescription="@string/activity_description"
             android:minHeight="50dp" />
 
         <TextView
@@ -73,7 +89,7 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="200dp"
-            android:text="Height"
+            android:hint="@string/height_input"
             android:textSize="24sp" />
 
         <EditText
@@ -87,7 +103,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Feet (ft)" />
+            android:hint="@string/feet_input"
+            android:autofillHints="5" />
 
         <EditText
             android:id="@+id/editTextInches"
@@ -100,7 +117,8 @@
             android:ems="10"
             android:inputType="textPersonName"
             android:minHeight="48dp"
-            android:text="Inches (in)" />
+            android:hint="@string/inches_input"
+            android:autofillHints="6" />
 
         <EditText
             android:id="@+id/editTextWeight"
@@ -108,21 +126,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Weight (lbs)"
-            android:textSize="24sp" />
-
-        <Button
-            android:id="@+id/submitbutton"
-            android:layout_width="168dp"
-            android:layout_height="72dp"
-            android:layout_marginStart="216dp"
-            android:layout_marginTop="52dp"
-            android:layout_marginEnd="216dp"
-            android:layout_marginBottom="45dp"
-            android:background="#FF5722"
-            android:text="SUBMIT"
-            android:textSize="24sp" />
+            android:hint="@string/weight_input"
+            android:textSize="24sp"
+            android:inputType="number"
+            android:autofillHints="125" />
 
     </LinearLayout>
 

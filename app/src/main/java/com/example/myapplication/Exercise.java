@@ -33,27 +33,27 @@ public class Exercise {
         run = userRun;
         switch(run){
             case BASE:
-                for (int i = 0; i < duration/8; i++) {
-                    seconds[i] = user.getMaxHeartRate() * (0.5 + i * 0.2/(duration/8));
+                for (int i = 0; i < duration/8.0; i++) {
+                    seconds[i] = user.getMaxHeartRate() * (0.5 + i * 0.2/(duration/8.0));
                 }
-                for (int i = duration/8; i < duration - duration/8; i++) {
-                    seconds[i] = user.getMaxHeartRate() * (0.7 + (i - duration/8) * 0.15/(duration-duration/8));
+                for (int i = (int) (duration/8.0); i < duration - duration/8.0; i++) {
+                    seconds[i] = user.getMaxHeartRate() * (0.7 + (i - duration/8.0) * 0.15/(duration-duration/8.0));
                 }
-                for (int i = duration - duration/8; i < duration; i++) {
-                    seconds[i] = user.getMaxHeartRate() * (0.7 - (i - (duration - duration/8)) * 0.2/(duration/8));
+                for (int i = (int) (duration - duration/8.0); i < duration; i++) {
+                    seconds[i] = user.getMaxHeartRate() * (0.7 - (i - (duration - duration/8.0)) * 0.2/(duration/8.0));
                 }
                 break;
 
             case PROGRESSION:
                 for (int i = 0; i < duration; i++) {
-                    if (i < duration/4) {
-                        seconds[i] = user.getMaxHeartRate() * (0.5 + i * 0.2/(duration/4));
-                    } else if (i > duration/4 && i < duration/2) {
-                        seconds[i] = user.getMaxHeartRate() * (0.7 + (i - duration/4) * 0.08/(duration/4));
-                    } else if (i > duration/2 && i < (3 * duration/4)) {
-                        seconds[i] = user.getMaxHeartRate() * (0.78 + (i - duration/2) * 0.06/(duration/4));
+                    if (i < duration/4.0) {
+                        seconds[i] = user.getMaxHeartRate() * (0.5 + i * 0.2/(duration/4.0));
+                    } else if (i > duration/4.0 && i < duration/2.0) {
+                        seconds[i] = user.getMaxHeartRate() * (0.7 + (i - duration/4.0) * 0.08/(duration/4.0));
+                    } else if (i > duration/2.0 && i < (3 * duration/4.0)) {
+                        seconds[i] = user.getMaxHeartRate() * (0.78 + (i - duration/2.0) * 0.06/(duration/4.0));
                     } else {
-                        seconds[i] = user.getMaxHeartRate() * (0.84 + (i - 3 * duration/4) * 0.12/(duration/4));
+                        seconds[i] = user.getMaxHeartRate() * (0.84 + (i - 3 * duration/4.0) * 0.12/(duration/4.0));
                     }
                 }
                 break;
