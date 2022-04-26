@@ -4,24 +4,26 @@ public class Song {
 
     // Data
 
+    final private int ID; // Keeps track of what song is being manipulated
     private String title; // The title of the song
     private String artist; // The artist which produced the song
     private double duration; // How long the song runs for, measured in seconds
     private double tempo; // The number of beats per minute (bpm)
     private double valence; // Describes the musical positiveness conveyed by a track
-    final private int ID; // Keeps track of what song is being manipulated
+    private String genre; // The genre of the music
 
     // Constructor
 
     // Constructs a Song object which contains five parameters (title, artist, duration, tempo, and valence)
 
-    public Song(int id, String t, String a, double d, double bpm, double v) {
+    public Song(int id, String t, String a, double d, double bpm, double v, String g) {
         ID = id;
         title = t;
         artist = a;
         duration = d;
         tempo = bpm;
         valence = v;
+        genre = g;
     }
 
     // Methods
@@ -123,6 +125,24 @@ public class Song {
 
     public void setValence(double valence) {
         this.valence = valence;
+    }
+
+    /**
+     * Method which gets the genre of a song
+     * @return genre The genre of the song
+     */
+
+    public String getGenre() {
+        return genre;
+    }
+
+    /**
+     * Method which sets the genre of a song
+     * @param genre The new genre of the song
+     */
+
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
 }
