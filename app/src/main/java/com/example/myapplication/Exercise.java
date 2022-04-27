@@ -131,9 +131,11 @@ public class Exercise {
     public void setSongs() {
         songList = new ArrayList<Song>();
         ArrayList<Integer> songIDs = new ArrayList<Integer>();
+        ArrayList<Double> songDurations = new ArrayList<Double>();
         for (Song s: songs.getSongs()) {
             if (s.getGenre().equals(genre)) {
                 songIDs.add(s.getID());
+                songDurations.add(s.getDuration());
             }
         }
         ArrayList<Integer> finalIDs = new ArrayList<Integer>();
@@ -141,6 +143,7 @@ public class Exercise {
             ArrayList<Double> fitNum = new ArrayList<Double>();
             double fitIndex = 1;
             int finalID = 0;
+            int selectedDuration = 0;
             int length = 0;
             for (Song s: songs.getSongs()) {
                 if (s.getGenre().equals(genre)) {
@@ -160,10 +163,11 @@ public class Exercise {
                 if (Math.abs(fitNum.get(k)) < fitIndex) {
                     fitIndex = Math.abs(fitNum.get(k));
                     finalID = songIDs.get(k);
+                    selectedDuration = songDurations.get(k).intValue();
                 }
             }
             finalIDs.add(finalID);
-            i = i + length;
+            i = i + selectedDuration;
         }
         for (int k: finalIDs) {
             songList.add(songs.getSongs().get(songs.findID(k)));
