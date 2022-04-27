@@ -9,8 +9,8 @@ public class ExerciseTester {
 
         User diksha = new User(5, 8, 100, 17);
         Exercise workout = new Exercise(diksha, 60);
-        workout.setTypeofRun(TypeofRun.PROGRESSION);
-        workout.setGenreString(Genre.RAP);
+        workout.setTypeofRun(TypeofRun.BASE);
+        workout.setGenreString(Genre.ROCK);
         workout.setSongs();
         localSongList = workout.getSongList();
         for (Song song: localSongList) {
