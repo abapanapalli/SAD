@@ -26,7 +26,7 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home);
-        spinner = findViewById(R.id.ActivityLevel);
+        spinner = findViewById(R.id.editLevel);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.ActivityLevel, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -34,7 +34,7 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
 
 
 
-        ageInput = (EditText) findViewById(R.id.editTextAge);
+        ageInput = (EditText) findViewById(R.id.editAge);
         weightInput = (EditText) findViewById(R.id.editTextWeight);
         heightftInput = (EditText) findViewById(R.id.editTextFeet);
         heightinInput = (EditText) findViewById(R.id.editTextInches);

@@ -1,11 +1,13 @@
 <resources>
     <string name="app_name">Personal Record</string>
     <string name="activity_description">Choose how active you are.</string>
+
     <string-array name="ActivityLevel">
         `<item>Light</item>
          <item>Moderate</item>
          <item>Frequent</item>
     </string-array>
+
     <string name="submit_button">SUBMIT</string>
     <string name="input_info">Input the following information:</string>
     <string name="age_input">Age</string>
@@ -14,4 +16,18 @@
     <string name="feet_input">Feet (ft)</string>
     <string name="inches_input">Inches (in)</string>
     <string name="weight_input">Weight (lbs)</string>
+
+
+    <string name="type_of_run" >Select the type of run:</string>
+
+    <string-array name="RunOptions">
+        <item>Recovery</item>
+        <item>Base</item>
+        <item>Progression</item>
+    </string-array>
+
+    <string name= "duration">Duration</string>
+    <string name="duration_input">Time (min)</string>
+    <string name="run_options" />
+
 </resources>
