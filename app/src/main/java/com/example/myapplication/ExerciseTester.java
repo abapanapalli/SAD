@@ -16,7 +16,7 @@ public class ExerciseTester {
         double totalLength = 0;
         for (Song song: localSongList) {
             totalLength = totalLength + song.getDuration();
-            System.out.println(song.getTitle() + ", " + song.getDuration() + ", " + song.getTempo() + ", " + song.getGenre());
+            System.out.println(song);
         }
         System.out.println("The total length of the songs played is " + totalLength + " seconds, " +
                 "which corresponds to " + totalLength / 60 + " minutes.");

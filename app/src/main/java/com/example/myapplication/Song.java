@@ -145,4 +145,9 @@ public class Song {
         this.genre = genre;
     }
 
+    public String toString() {
+        return this.getID() + ", " + this.getTitle() +  ", " + this.getArtist() +  ", " + this.getDuration() +  ", " + this.getTempo() +  ", " + this.getValence() +  ", " + this.getGenre();
+    }
+
+
 }
