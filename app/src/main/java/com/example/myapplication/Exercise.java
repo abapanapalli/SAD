@@ -8,6 +8,20 @@ enum TypeofRun {
     RECOVERY;
 }
 
+enum Genre {
+    CLASSICAL,
+    JAZZ,
+    ELECTRONIC,
+    ROCK,
+    ALTERNATIVE,
+    HIPHOP,
+    BLUES,
+    ANIME,
+    RAP,
+    COUNTRY;
+}
+
+
 public class Exercise {
 
     //Data
@@ -17,6 +31,8 @@ public class Exercise {
     TypeofRun run;
     private MasterSong songs;
     ArrayList<Song> songList;
+    Genre runGenre;
+    String genre;
 
     //Constructors
     public Exercise(User u, int lengthofrun)
@@ -25,7 +41,7 @@ public class Exercise {
         duration = lengthofrun * 60;
         seconds = new double[lengthofrun * 60];
         songs = new MasterSong();
-        songs.load("app/src/main/res/raw/clean_music_data.csv");
+        songs.load("app/src/main/res/raw/clean_music_genre_data.csv");
     }
 
     ///Methods
@@ -66,42 +82,92 @@ public class Exercise {
         }
     }
 
+    public void setGenreString(Genre userGenre) {
+        runGenre = userGenre;
+        switch(runGenre){
+            case CLASSICAL:
+                genre = "Classical";
+                break;
+
+            case JAZZ:
+                genre = "Jazz";
+                break;
+
+            case ELECTRONIC:
+                genre = "Electronic";
+                break;
+
+            case ROCK:
+                genre = "Rock";
+                break;
+
+            case ALTERNATIVE:
+                genre = "Alternative";
+                break;
+
+            case HIPHOP:
+                genre = "Hip-Hop";
+                break;
+
+            case BLUES:
+                genre = "Blues";
+                break;
+
+            case ANIME:
+                genre = "Anime";
+                break;
+
+            case RAP:
+                genre = "Rap";
+                break;
+
+            case COUNTRY:
+                genre = "Country";
+                break;
+
+        }
+    }
+
     public void setSongs() {
         songList = new ArrayList<Song>();
-        double[] fitNum = new double[songs.getSongs().size()];
-        int[] songIDs = new int[songs.getSongs().size()];
-        int a = 0;
+        ArrayList<Integer> songIDs = new ArrayList<Integer>();
+        ArrayList<Double> songDurations = new ArrayList<Double>();
         for (Song s: songs.getSongs()) {
-            songIDs[a] = s.getID();
-            a++;
+            if (s.getGenre().equals(genre)) {
+                songIDs.add(s.getID());
+                songDurations.add(s.getDuration());
+            }
         }
         ArrayList<Integer> finalIDs = new ArrayList<Integer>();
         for (int i = 0; i < seconds.length; i++) {
+            ArrayList<Double> fitNum = new ArrayList<Double>();
             double fitIndex = 1;
-            int SongCounter = 0;
             int finalID = 0;
+            int selectedDuration = 0;
             int length = 0;
             for (Song s: songs.getSongs()) {
-                if (!finalIDs.contains(s.getID())) {
-                    double totalBPM = 0;
-                    length = 0;
-                    for (int j = i; j < i + (int) s.getDuration() && j < seconds.length; j++) {
-                        totalBPM = totalBPM + seconds[j];
-                        length++;
+                if (s.getGenre().equals(genre)) {
+                    if (!finalIDs.contains(s.getID())) {
+                        double totalBPM = 0;
+                        length = 0;
+                        for (int j = i; j < i + (int) s.getDuration() && j < seconds.length; j++) {
+                            totalBPM = totalBPM + seconds[j];
+                            length++;
+                        }
+                        double avgBPM = totalBPM / length;
+                        fitNum.add(avgBPM - s.getTempo());
                     }
-                    double avgBPM = totalBPM / length;
-                    fitNum[SongCounter] = avgBPM - s.getTempo();
-                    SongCounter++;
                 }
             }
-            for (int k = 0; k < songs.getSongs().size(); k++) {
-                if (Math.abs(fitNum[k]) < fitIndex) {
-                    fitIndex = Math.abs(fitNum[k]);
-                    finalID = songIDs[k];
+            for (int k = 0; k < fitNum.size(); k++) {
+                if (Math.abs(fitNum.get(k)) < fitIndex) {
+                    fitIndex = Math.abs(fitNum.get(k));
+                    finalID = songIDs.get(k);
+                    selectedDuration = songDurations.get(k).intValue();
                 }
             }
             finalIDs.add(finalID);
-            i = i + length;
+            i = i + selectedDuration;
         }
         for (int k: finalIDs) {
             songList.add(songs.getSongs().get(songs.findID(k)));
