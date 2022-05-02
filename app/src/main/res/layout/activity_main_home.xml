@@ -39,6 +39,18 @@
             android:textColor="#DD2C00"
             android:textSize="35sp" />
 
+        <Button
+            android:id="@+id/StartARunButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/start_a_run" />
+
+        <Button
+            android:id="@+id/SETTINGSBUTTON"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/settings" />
+
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

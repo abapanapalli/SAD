@@ -30,4 +30,7 @@
     <string name="duration_input">Time (min)</string>
     <string name="run_options" />
 
+    <string name="start_a_run">START A RUN</string>
+    <string name="settings">SETTINGS</string>
+
 </resources>

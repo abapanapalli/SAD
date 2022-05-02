@@ -56,6 +56,10 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
         });
     }
 
+    public void saveData(){
+
+    }
+
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         String choice = adapterView.getItemAtPosition(i).toString();
