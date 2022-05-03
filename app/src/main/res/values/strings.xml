@@ -3,7 +3,7 @@
     <string name="activity_description">Choose how active you are.</string>
 
     <string-array name="ActivityLevel">
-        `<item>Light</item>
+         <item>Light</item>
          <item>Moderate</item>
          <item>Frequent</item>
     </string-array>
