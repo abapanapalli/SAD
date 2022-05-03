@@ -4,9 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_home.xml" value="0.2222222222222222" />
-        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_run.xml" value="0.2222222222222222" />
-        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_setup.xml" value="0.286231884057971" />
+        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_run.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_main_default.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_main_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_main_playlist.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_main_setup.xml" value="0.25" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1535" />
       </map>
