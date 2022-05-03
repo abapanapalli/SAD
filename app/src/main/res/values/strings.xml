@@ -3,9 +3,9 @@
     <string name="activity_description">Choose how active you are.</string>
 
     <string-array name="ActivityLevel">
-         <item>Light</item>
-         <item>Moderate</item>
-         <item>Frequent</item>
+        <item>Light</item>
+        <item>Moderate</item>
+        <item>Frequent</item>
     </string-array>
 
     <string name="submit_button">SUBMIT</string>
@@ -18,7 +18,7 @@
     <string name="weight_input">Weight (lbs)</string>
 
 
-    <string name="type_of_run" >Select the type of run:</string>
+    <string name="type_of_run">Select the type of run:</string>
 
     <string-array name="RunOptions">
         <item>Recovery</item>
@@ -26,7 +26,7 @@
         <item>Progression</item>
     </string-array>
 
-    <string name= "duration">Duration</string>
+    <string name="duration">Duration</string>
     <string name="duration_input">Time (min)</string>
     <string name="run_options" />
 

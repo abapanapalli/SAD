@@ -10,8 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.content.Intent;
 
-public class MainActivityHome extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class MainActivitySetup extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     int age, weight, heightft, heightin;
     EditText ageInput;
     EditText weightInput;
@@ -52,6 +53,13 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
                 showToast(String.valueOf(weight));
                 showToast(String.valueOf(heightft));
                 showToast(String.valueOf(heightin));
+
+                Intent intent = new Intent(MainActivitySetup.this,MainActivityHomePage.class);
+                startActivity(intent);
+
+
+
+
             }
         });
     }
@@ -71,6 +79,6 @@ public class MainActivityHome extends AppCompatActivity implements AdapterView.O
 
     }
     private void showToast(String text){
-        Toast.makeText(MainActivityHome.this, text, Toast.LENGTH_SHORT).show();
+        Toast.makeText(MainActivitySetup.this, text, Toast.LENGTH_SHORT).show();
     }
 }

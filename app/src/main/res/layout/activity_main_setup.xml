@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityHome">
+    tools:context=".MainActivitySetup">
 
     <Button
         android:id="@+id/submitbutton"
