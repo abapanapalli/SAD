@@ -10,13 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".MainActivityPlaylists"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityRunPage"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivityHomePage"
+            android:exported="false" />
+        <activity
             android:name=".MainActivitySetup"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
