@@ -8,7 +8,7 @@
          <item>Frequent</item>
     </string-array>
 
-    <string name="submit_button">SUBMIT</string>
+    <string name="save_button">SAVE</string>
     <string name="input_info">Input the following information:</string>
     <string name="age_input">Age</string>
     <string name="activity_level">Activity Level</string>

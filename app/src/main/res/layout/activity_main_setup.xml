@@ -5,7 +5,7 @@
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityHome">
+    tools:context=".MainActivitySetup">
 
     <Button
         android:id="@+id/submitbutton"
@@ -15,7 +15,7 @@
         android:layout_marginTop="50dp"
         android:layout_marginEnd="250dp"
         android:background="#FF5722"
-        android:text="@string/submit_button"
+        android:text="@string/save_button"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
