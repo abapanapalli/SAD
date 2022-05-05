@@ -33,4 +33,6 @@
     <string name="start_a_run">START A RUN</string>
     <string name="settings">SETTINGS</string>
 
+    <string name="playlistlabel">Your Playlist:</string>
+
 </resources>
