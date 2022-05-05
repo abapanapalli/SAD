@@ -8,6 +8,9 @@
         <item>Frequent</item>
     </string-array>
 
+
+
+    <string name="next_button">NEXT</string>
     <string name="save_button">SAVE</string>
     <string name="input_info">Input the following information:</string>
     <string name="age_input">Age</string>

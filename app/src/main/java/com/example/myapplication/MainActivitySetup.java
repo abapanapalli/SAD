@@ -40,7 +40,7 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         heightftInput = (EditText) findViewById(R.id.editTextFeet);
         heightinInput = (EditText) findViewById(R.id.editTextInches);
 
-        button = (Button) findViewById(R.id.submitbutton);
+        button = (Button) findViewById(R.id.savebutton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
