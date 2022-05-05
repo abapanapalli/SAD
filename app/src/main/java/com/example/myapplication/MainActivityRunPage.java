@@ -28,7 +28,7 @@ Spinner spinner;
 
 
 
-        submitrun = (Button) findViewById(R.id.StartARunButton);
+        submitrun = (Button) findViewById(R.id.submitbutton2);
         submitrun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
