@@ -49,10 +49,11 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
                 heightft = Integer.valueOf(heightftInput.getText().toString());
                 heightin = Integer.valueOf(heightinInput.getText().toString());
 
-                showToast(String.valueOf(age));
-                showToast(String.valueOf(weight));
-                showToast(String.valueOf(heightft));
-                showToast(String.valueOf(heightin));
+                Toast.makeText(MainActivitySetup.this, ageInput.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivitySetup.this, weightInput.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivitySetup.this, heightftInput.getText().toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivitySetup.this, heightinInput.getText().toString(), Toast.LENGTH_SHORT).show();
+
 
                 Intent intent = new Intent(MainActivitySetup.this,MainActivityHomePage.class);
                 startActivity(intent);
