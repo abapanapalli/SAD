@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".MainActivityHomePage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,33 +28,44 @@
 
             <ImageView
                 android:id="@+id/prLogo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:layout_width="300sp"
+                android:layout_height="300sp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/personalrecordlogo3" />
 
             <TextView
                 android:id="@+id/AppName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="450sp"
+                android:layout_height="100sp"
                 android:layout_marginStart="61dp"
                 android:layout_marginEnd="61dp"
-                android:layout_marginBottom="86dp"
-                android:background="#6BF17F29"
+                android:layout_marginBottom="40dp"
+                android:background="@color/orange_red_crayola"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
                 android:text="@string/app_name"
                 android:textAlignment="center"
-                android:textColor="#DD2C00"
-                android:textSize="35sp" />
+                android:textColor="@color/white"
+                android:textSize="60sp" />
 
             <Button
                 android:id="@+id/StartARunButton"
-                android:layout_width="match_parent"
+                android:layout_width="400sp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/bittersweet"
+                android:textSize="25sp"
+                android:fontFamily="@font/ubuntu_bold"
                 android:text="@string/start_a_run" />
 
             <Button
                 android:id="@+id/SETTINGSBUTTON"
-                android:layout_width="match_parent"
+                android:layout_width="400sp"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/bittersweet"
+                android:textSize="25sp"
+                android:fontFamily="@font/ubuntu_bold"
                 android:text="@string/settings" />
 
 

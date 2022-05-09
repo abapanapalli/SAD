@@ -4,25 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color"
     tools:context=".MainActivityRunPage">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/submitbutton2"
-            android:layout_width="168dp"
-            android:layout_height="72dp"
-            android:layout_marginStart="250dp"
-            android:layout_marginTop="50dp"
-            android:layout_marginEnd="250dp"
-            android:background="#FF5722"
-            android:text="@string/submit_run"
-            android:textSize="24sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
 
         <LinearLayout
             android:id="@+id/LinearLayout"
@@ -34,30 +21,35 @@
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.186">
+            app:layout_constraintVertical_bias="0.427">
 
             <TextView
                 android:id="@+id/AppName"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="450sp"
+                android:layout_height="100sp"
                 android:layout_marginStart="61dp"
                 android:layout_marginEnd="61dp"
-                android:layout_marginBottom="86dp"
-                android:background="#6BF17F29"
+                android:layout_marginBottom="40dp"
+                android:background="@color/orange_red_crayola"
+                android:fontFamily="@font/oswald"
+                android:gravity="center"
                 android:text="@string/app_name"
                 android:textAlignment="center"
-                android:textColor="#DD2C00"
-                android:textSize="35sp" />
+                android:textColor="@color/white"
+                android:textSize="60sp" />
 
 
             <TextView
                 android:id="@+id/TypeOfRunLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/type_of_run" />
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/type_of_run"
+                android:textColor="@color/bittersweet"
+                android:textSize="30sp" />
 
             <Spinner
                 android:id="@+id/editTypeRun"
@@ -71,7 +63,10 @@
                 android:id="@+id/DurationLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/duration" />
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/duration"
+                android:textColor="@color/bittersweet"
+                android:textSize="30sp" />
 
             <EditText
                 android:id="@+id/editDuration"
@@ -79,9 +74,35 @@
                 android:layout_height="wrap_content"
                 android:autofillHints=""
                 android:ems="10"
+                android:fontFamily="@font/ubuntu"
                 android:hint="@string/duration_input"
                 android:inputType="number"
-                android:minHeight="48dp" />
+                android:minHeight="48dp"
+                android:textColorHint="@color/atomic_tangerine"
+                android:textSize="22sp" />
+
+            <Button
+                android:id="@+id/submitbutton2"
+                android:layout_width="168dp"
+                android:layout_height="72dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="250dp"
+                android:background="#FF5722"
+                android:text="@string/submit_run"
+                android:textSize="24sp"
+                android:fontFamily="@font/ubuntu_bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
+
+            <ImageView
+                android:id="@+id/prLogo"
+                android:layout_width="300sp"
+                android:layout_height="300sp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/personalrecordlogo3" />
 
         </LinearLayout>
 

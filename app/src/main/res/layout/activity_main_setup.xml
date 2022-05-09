@@ -4,71 +4,61 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/ConstraintLayout"
     android:layout_width="match_parent"
+    android:background="@color/background_color"
     android:layout_height="match_parent"
     tools:context=".MainActivitySetup">
 
-    <Button
-        android:id="@+id/savebutton"
-        android:layout_width="168dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="250dp"
-        android:background="#FF5722"
-        android:text="@string/save_button"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
-
-    <Button
-        android:id="@+id/nextbutton"
-        android:layout_width="168dp"
-        android:layout_height="72dp"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="164dp"
-        android:layout_marginEnd="250dp"
-        android:background="#FF5722"
-        android:text="@string/next_button"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/LinearLayout" />
 
     <LinearLayout
         android:id="@+id/LinearLayout"
-        android:layout_width="550dp"
-        android:layout_height="wrap_content"
+        android:layout_width="577dp"
+        android:layout_height="781dp"
         android:layout_marginStart="25dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="25dp"
+        android:layout_marginBottom="5dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.481"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.186">
+        app:layout_constraintVertical_bias="0.304">
 
         <TextView
             android:id="@+id/AppName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="450sp"
+            android:layout_height="100sp"
             android:layout_marginStart="61dp"
             android:layout_marginEnd="61dp"
-            android:layout_marginBottom="86dp"
-            android:background="#6BF17F29"
+            android:layout_marginBottom="40dp"
+            android:background="@color/orange_red_crayola"
+            android:fontFamily="@font/oswald"
+            android:gravity="center"
             android:text="@string/app_name"
             android:textAlignment="center"
-            android:textColor="#DD2C00"
-            android:textSize="35sp" />
+            android:textColor="@color/white"
+            android:textSize="60sp" />
 
         <TextView
             android:id="@+id/AgeLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_bold"
+            android:gravity="center"
             android:text="@string/input_info"
-            android:textSize="26sp" />
+            android:textColor="@color/bittersweet"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/AgePrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_medium"
+
+            android:text="@string/ageprompt"
+            android:textColor="@color/coral"
+            android:textSize="23sp" />
 
         <EditText
             android:id="@+id/editAge"
@@ -76,9 +66,12 @@
             android:layout_height="wrap_content"
             android:autofillHints="25"
             android:ems="10"
+            android:fontFamily="@font/ubuntu"
             android:hint="@string/age_input"
             android:inputType="number"
-            android:textSize="24sp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/atomic_tangerine"
+            android:textSize="22sp" />
 
         <TextView
             android:id="@+id/ActivityLevelLabel"
@@ -86,8 +79,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="0dp"
             android:layout_marginTop="20dp"
-            android:hint="@string/activity_level"
-            android:textSize="24sp" />
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/activity_level"
+            android:textColor="@color/coral"
+            android:textSize="23sp" />
 
         <Spinner
             android:id="@+id/editLevel"
@@ -103,8 +98,20 @@
             android:layout_marginStart="0dp"
             android:layout_marginTop="25dp"
             android:layout_marginEnd="200dp"
-            android:hint="@string/height_input"
-            android:textSize="24sp" />
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/height_input"
+            android:textColor="@color/coral"
+            android:textSize="23sp" />
+
+
+        <TextView
+            android:id="@+id/FeetPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/feet_prompt"
+            android:textColor="@color/coral"
+            android:textSize="21sp" />
 
         <EditText
             android:id="@+id/editTextFeet"
@@ -116,9 +123,22 @@
             android:layout_marginBottom="10dp"
             android:autofillHints="5"
             android:ems="10"
+            android:fontFamily="@font/ubuntu"
             android:hint="@string/feet_input"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/atomic_tangerine"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/InchesPrompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu"
+            android:text="@string/inches_prompt"
+            android:textColor="@color/coral"
+            android:textSize="21sp" />
+
 
         <EditText
             android:id="@+id/editTextInches"
@@ -132,7 +152,18 @@
             android:ems="10"
             android:hint="@string/inches_input"
             android:inputType="textPersonName"
-            android:minHeight="48dp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/atomic_tangerine"
+            android:textSize="22sp" />
+
+        <TextView
+            android:id="@+id/WeightLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/ubuntu_medium"
+            android:text="@string/weightlabel"
+            android:textColor="@color/coral"
+            android:textSize="23sp" />
 
         <EditText
             android:id="@+id/editTextWeight"
@@ -141,9 +172,31 @@
             android:layout_marginTop="10dp"
             android:autofillHints="125"
             android:ems="10"
+            android:fontFamily="@font/ubuntu"
             android:hint="@string/weight_input"
             android:inputType="number"
-            android:textSize="24sp" />
+            android:minHeight="48dp"
+            android:textColorHint="@color/atomic_tangerine"
+            android:textSize="22sp" />
+
+        <Button
+            android:id="@+id/savebutton"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:layout_marginStart="100dp"
+            android:layout_marginEnd="100dp"
+            android:layout_marginRight="100sp"
+            android:layout_marginBottom="32dp"
+            android:backgroundTint="@color/orange_red_crayola"
+            android:fontFamily="@font/ubuntu_bold"
+            android:text="@string/save_button"
+            android:textColor="@color/white"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="@id/editTextWeight"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/editTextWeight" />
+
 
     </LinearLayout>
 

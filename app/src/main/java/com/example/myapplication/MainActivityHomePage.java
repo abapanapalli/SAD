@@ -9,10 +9,22 @@ import android.widget.Button;
 
 public class MainActivityHomePage extends AppCompatActivity {
 Button runbutton;
+Button settingsbutton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_home_page);
+
+        settingsbutton = (Button) findViewById(R.id.SETTINGSBUTTON);
+        settingsbutton.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View view) {
+                      Intent intent = new Intent(MainActivityHomePage.this,MainActivitySetup.class);
+                      startActivity(intent);
+            }
+        });
+
 
 
 
@@ -23,4 +35,5 @@ Button runbutton;
                 Intent intent = new Intent(MainActivityHomePage.this,MainActivityRunPage.class);
                 startActivity(intent);
     }
+
 });}}

@@ -2,7 +2,9 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -13,13 +15,14 @@ import android.widget.Toast;
 import android.content.Intent;
 
 public class MainActivitySetup extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
-    int age, weight, heightft, heightin;
+  private int age, weight, heightft, heightin, activityLevel;
     EditText ageInput;
     EditText weightInput;
     EditText heightftInput;
     EditText heightinInput;
 
     Button button;
+
 
 
     private Spinner spinner;
@@ -39,6 +42,10 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         weightInput = (EditText) findViewById(R.id.editTextWeight);
         heightftInput = (EditText) findViewById(R.id.editTextFeet);
         heightinInput = (EditText) findViewById(R.id.editTextInches);
+        activityLevel = spinner.getSelectedItemPosition();
+
+
+
 
         button = (Button) findViewById(R.id.savebutton);
         button.setOnClickListener(new View.OnClickListener() {
@@ -49,10 +56,8 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
                 heightft = Integer.valueOf(heightftInput.getText().toString());
                 heightin = Integer.valueOf(heightinInput.getText().toString());
 
-                Toast.makeText(MainActivitySetup.this, ageInput.getText().toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivitySetup.this, weightInput.getText().toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivitySetup.this, heightftInput.getText().toString(), Toast.LENGTH_SHORT).show();
-                Toast.makeText(MainActivitySetup.this, heightinInput.getText().toString(), Toast.LENGTH_SHORT).show();
+
+                saveData();
 
 
                 Intent intent = new Intent(MainActivitySetup.this,MainActivityHomePage.class);
@@ -63,10 +68,43 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
 
             }
         });
+
+        loadData();
+        updateViews();
     }
 
     public void saveData(){
+        SharedPreferences runningData = getSharedPreferences("runningData", MODE_PRIVATE);
+        SharedPreferences.Editor edits = runningData.edit();
 
+        edits.putInt("age", Integer.parseInt(ageInput.getText().toString()));
+        edits.putInt("weight", Integer.parseInt(weightInput.getText().toString()));
+        edits.putInt("height in feet", Integer.parseInt(heightftInput.getText().toString()));
+        edits.putInt("height in inches", Integer.parseInt(heightinInput.getText().toString()));
+
+        edits.putInt("activity level", spinner.getSelectedItemPosition());
+        Log.d("diksha","activityLevel:"+ activityLevel);
+
+        edits.apply();
+        edits.commit();
+
+        Toast.makeText(this, "Your information has been saved!",Toast.LENGTH_SHORT).show();
+    }
+
+    public void loadData(){
+        SharedPreferences runningData = getSharedPreferences("runningData", MODE_PRIVATE);
+        age = runningData.getInt("age",0);
+        weight = runningData.getInt("weight",0);
+        heightft = runningData.getInt("height in feet", 0);
+        heightin = runningData.getInt("height in inches",0);
+       activityLevel = runningData.getInt("activity level",0);
+    }
+    public void updateViews(){
+        ageInput.setText(String.valueOf(age));
+        weightInput.setText(String.valueOf(weight));
+        heightftInput.setText(String.valueOf(heightft));
+        heightinInput.setText(String.valueOf(heightin));
+        spinner.setSelection(activityLevel);
     }
 
     @Override
@@ -81,5 +119,5 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
     }
     private void showToast(String text){
         Toast.makeText(MainActivitySetup.this, text, Toast.LENGTH_SHORT).show();
-    }
-}
+    }}
+

@@ -3,16 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/font/fontresource.xml" value="0.3107142857142857" />
         <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_home.xml" value="0.2222222222222222" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2265" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2265" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_default.xml" value="0.536" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_home.xml" value="0.264" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_playlist.xml" value="0.2" />
+        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_home_page.xml" value="0.28351449275362317" />
+        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_playlists.xml" value="0.30416666666666664" />
+        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_run_page.xml" value="0.2977777777777778" />
+        <entry key="..\:/Users/Diksha/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_setup.xml" value="0.25" />
         <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_run.xml" value="0.264" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_run_page.xml" value="0.264" />
-        <entry key="..\:/Users/smita/AndroidStudioProjects/SAD/app/src/main/res/layout/activity_main_setup.xml" value="0.264" />
+        <entry key="app/src/main/res/layout/activity_main_default.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/layout/activity_main_home.xml" value="0.19610507246376813" />
+        <entry key="app/src/main/res/layout/activity_main_playlist.xml" value="0.375" />
+        <entry key="app/src/main/res/layout/activity_main_playlists.xml" value="0.15520833333333334" />
+        <entry key="app/src/main/res/layout/activity_main_setup.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/text_row_item.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1535" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1535" />
       </map>

@@ -5,12 +5,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivityPlaylists">
+    tools:context=".MainActivityPlaylists"
+    android:background="@color/background_color">
 
 <!--    <android.support.v7.widget.RecyclerView-->
 <!--        android:id="@id/recyclerview"-->
 <!--        android:layout_width="match_parent"-->
 <!--        android:layout_height="match_parent"-->
 <!--        />-->
+
+    <ImageView
+        android:id="@+id/prLogo"
+        android:layout_width="300sp"
+        android:layout_height="300sp"
+        android:layout_gravity="center_horizontal"
+        app:srcCompat="@drawable/personalrecordlogo3" />
+
+    <TextView
+        android:id="@+id/AppName"
+        android:layout_width="450sp"
+        android:layout_height="100sp"
+        android:layout_marginStart="61dp"
+        android:layout_marginEnd="61dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="250sp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/orange_red_crayola"
+        android:fontFamily="@font/oswald"
+        android:gravity="center"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="60sp" />
+
+    <TextView
+        android:id="@+id/playlistLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/playlistlabel"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="370sp"
+        android:textSize="30sp"
+        android:fontFamily= "@font/ubuntu_bold"
+        android:textColor="@color/bittersweet"/>
 
 </FrameLayout>

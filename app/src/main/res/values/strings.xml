@@ -13,12 +13,15 @@
     <string name="next_button">NEXT</string>
     <string name="save_button">SAVE</string>
     <string name="input_info">Input the following information:</string>
-    <string name="age_input">Age</string>
-    <string name="activity_level">Activity Level</string>
-    <string name="height_input">Height</string>
+    <string name="age_input">Age (years)</string>
+    <string name="activity_level">Select Activity Level:</string>
+    <string name="height_input">Height:</string>
     <string name="feet_input">Feet (ft)</string>
     <string name="inches_input">Inches (in)</string>
     <string name="weight_input">Weight (lbs)</string>
+    <string name = "feet_prompt">Feet:</string>
+    <string name = "inches_prompt">Inches:</string>
+    <string name="weightlabel">Weight (in lbs):</string>
 
 
     <string name="type_of_run">Select the type of run:</string>
@@ -29,7 +32,7 @@
         <item>Progression</item>
     </string-array>
 
-    <string name="duration">Duration</string>
+    <string name="duration">Duration:</string>
     <string name="duration_input">Time (min)</string>
     <string name="run_options" />
 
@@ -38,6 +41,9 @@
 
     <string name = "submit_run">SUBMIT</string>
 
-    <string name="playlistlabel">Your Playlist:</string>
+    <string name="playlistlabel">Your Personalized Playlist:</string>
+
+    <string name = "ageprompt">Age (in years):</string>
+
 
 </resources>
