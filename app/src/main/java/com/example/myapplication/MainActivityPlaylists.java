@@ -16,6 +16,8 @@ Button backtohome;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_playlists);
 
+        Exercise exercise = (Exercise) getIntent().getSerializableExtra("exercise");
+
         backtohome = (Button) findViewById(R.id.backtohomebutton);
         backtohome.setOnClickListener(new View.OnClickListener() {
             @Override

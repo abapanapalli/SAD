@@ -7,14 +7,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivityRunPage extends AppCompatActivity {
 Button submitrun;
 Spinner spinner;
 Spinner genre;
 
-int typeofrun, duration, genrechoice;
+private int typeofrun, duration, genrechoice;
+EditText durationInput;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +36,10 @@ int typeofrun, duration, genrechoice;
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         genre.setAdapter(genreadapter);
 
+        typeofrun = spinner.getSelectedItemPosition();
+        durationInput = (EditText) findViewById(R.id.editDuration);
+        genrechoice = genre.getSelectedItemPosition();
+
 
         User u = (User) getIntent().getSerializableExtra("user");
 
@@ -41,8 +48,19 @@ int typeofrun, duration, genrechoice;
         submitrun.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivityRunPage.this,MainActivityPlaylists.class);
-                startActivity(intent);
+
+                if(durationInput.getText().toString().matches("")){
+                    Toast.makeText(MainActivityRunPage.this,"Please fill in all the required fields",Toast.LENGTH_SHORT).show();
+                }
+                else{
+                    duration = Integer.valueOf(durationInput.getText().toString());
+                    Exercise exercise = new Exercise(u,duration);
+                    Intent intent = new Intent(MainActivityRunPage.this,MainActivityPlaylists.class);
+                    intent.putExtra("exercise", exercise);
+                    startActivity(intent);
+                }
+
+
 
         }
     });}

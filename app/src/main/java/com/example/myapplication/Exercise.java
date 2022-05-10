@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 enum TypeofRun {
@@ -22,7 +23,7 @@ enum Genre {
 }
 
 
-public class Exercise {
+public class Exercise implements Serializable {
 
     //Data
     private int duration;
