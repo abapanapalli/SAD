@@ -12,6 +12,7 @@ import android.widget.Spinner;
 public class MainActivityRunPage extends AppCompatActivity {
 Button submitrun;
 Spinner spinner;
+Spinner genre;
 
 
     @Override
@@ -24,6 +25,12 @@ Spinner spinner;
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.RunOptions, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
+
+        genre = findViewById(R.id.Genre);
+
+        ArrayAdapter<CharSequence> genreadapter = ArrayAdapter.createFromResource(this, R.array.GenreOptions, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        genre.setAdapter(genreadapter);
 
 
 

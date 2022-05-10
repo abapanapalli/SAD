@@ -34,7 +34,22 @@
 
     <string name="duration">Duration:</string>
     <string name="duration_input">Time (min)</string>
+    <string name = "genrelabel">Select a genre of music:</string>
     <string name="run_options" />
+
+    <string-array name="GenreOptions">
+        <item>Classical</item>
+        <item>Jazz</item>
+        <item>Electronic</item>
+        <item>Rock</item>
+        <item>Alternative</item>
+        <item>Hiphop</item>
+        <item>Blues</item>
+        <item>Anime</item>
+        <item>Rap</item>
+        <item>Country</item>
+    </string-array>
+
 
     <string name="start_a_run">START A RUN</string>
     <string name="settings">SETTINGS</string>
@@ -44,6 +59,7 @@
     <string name="playlistlabel">Your Personalized Playlist:</string>
 
     <string name = "ageprompt">Age (in years):</string>
+    <string name = "backtohome">Back to Home</string>
 
 
 </resources>

@@ -80,6 +80,21 @@
                 android:minHeight="48dp"
                 android:textColorHint="@color/atomic_tangerine"
                 android:textSize="22sp" />
+            <TextView
+                android:id="@+id/GenreLabel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/ubuntu_bold"
+                android:text="@string/genrelabel"
+                android:textColor="@color/bittersweet"
+                android:textSize="30sp" />
+            <Spinner
+                android:id="@+id/Genre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/genrelabel"
+                android:minHeight="48dp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
 
             <Button
                 android:id="@+id/submitbutton2"
