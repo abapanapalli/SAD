@@ -14,23 +14,14 @@
 <!--        android:layout_height="match_parent"-->
 <!--        />-->
 
-    <Button
-        android:id="@+id/backtohomebutton"
-        android:layout_width="168dp"
-        android:layout_height="72dp"
-        android:layout_gravity="center"
-        android:layout_marginTop=""
-        android:backgroundTint="@color/atomic_tangerine"
-        android:fontFamily="@font/ubuntu_bold"
-        android:text="@string/backtohome"
-        android:textSize="24sp" />
+
 
     <ImageView
         android:id="@+id/prLogo"
         android:layout_width="300sp"
         android:layout_height="237dp"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/personalrecordlogo3" />
 
     <TextView
@@ -40,7 +31,7 @@
         android:layout_marginStart="61dp"
         android:layout_marginEnd="61dp"
         android:layout_marginBottom="40dp"
-        android:layout_marginTop="320sp"
+        android:layout_marginTop="220sp"
         android:layout_gravity="center_horizontal"
         android:background="@color/orange_red_crayola"
         android:fontFamily="@font/oswald"
@@ -56,9 +47,20 @@
         android:layout_height="wrap_content"
         android:text="@string/playlistlabel"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="430sp"
+        android:layout_marginTop="330sp"
         android:textSize="30sp"
         android:fontFamily= "@font/ubuntu_bold"
         android:textColor="@color/bittersweet"/>
+
+    <Button
+        android:id="@+id/backtohomebutton"
+        android:layout_width="168dp"
+        android:layout_height="72dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="350sp"
+        android:backgroundTint="@color/atomic_tangerine"
+        android:fontFamily="@font/ubuntu_bold"
+        android:text="@string/backtohome"
+        android:textSize="24sp" />
 
 </FrameLayout>

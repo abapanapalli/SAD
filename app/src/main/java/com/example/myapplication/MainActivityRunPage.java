@@ -14,6 +14,7 @@ Button submitrun;
 Spinner spinner;
 Spinner genre;
 
+int typeofrun, duration, genrechoice;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,7 @@ Spinner genre;
         genre.setAdapter(genreadapter);
 
 
+        User u = (User) getIntent().getSerializableExtra("user");
 
 
         submitrun = (Button) findViewById(R.id.submitbutton2);
@@ -41,6 +43,7 @@ Spinner genre;
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityRunPage.this,MainActivityPlaylists.class);
                 startActivity(intent);
+
         }
     });}
 

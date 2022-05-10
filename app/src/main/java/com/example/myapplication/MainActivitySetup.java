@@ -1,9 +1,11 @@
 package com.example.myapplication;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +16,9 @@ import android.widget.Spinner;
 import android.widget.Toast;
 import android.content.Intent;
 
-public class MainActivitySetup extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import java.io.Serializable;
+
+public class MainActivitySetup extends AppCompatActivity implements AdapterView.OnItemSelectedListener, Serializable {
   private int age, weight, heightft, heightin, activityLevel;
     EditText ageInput;
     EditText weightInput;
@@ -22,7 +26,6 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
     EditText heightinInput;
 
     Button button;
-
 
 
     private Spinner spinner;
@@ -51,20 +54,21 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                age = Integer.valueOf(ageInput.getText().toString());
-                weight = Integer.valueOf(weightInput.getText().toString());
-                heightft = Integer.valueOf(heightftInput.getText().toString());
-                heightin = Integer.valueOf(heightinInput.getText().toString());
 
-
-                saveData();
-
-
-                Intent intent = new Intent(MainActivitySetup.this,MainActivityHomePage.class);
-                startActivity(intent);
-
-
-
+                if(ageInput.getText().toString().matches("")||weightInput.getText().toString().matches("")||heightinInput.getText().toString().matches("")||heightftInput.getText().toString().matches("")){
+                    Toast.makeText(MainActivitySetup.this,"Please fill in all the required fields",Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    age = Integer.valueOf(ageInput.getText().toString());
+                    weight = Integer.valueOf(weightInput.getText().toString());
+                    heightft = Integer.valueOf(heightftInput.getText().toString());
+                    heightin = Integer.valueOf(heightinInput.getText().toString());
+                    saveData();
+                    User user = new User(heightft, heightin, weight, age);
+                    Intent intent = new Intent(MainActivitySetup.this, MainActivityHomePage.class);
+                    intent.putExtra("user", user);
+                    startActivity(intent);
+                }
 
             }
         });
@@ -83,7 +87,6 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         edits.putInt("height in inches", Integer.parseInt(heightinInput.getText().toString()));
 
         edits.putInt("activity level", spinner.getSelectedItemPosition());
-        Log.d("diksha","activityLevel:"+ activityLevel);
 
         edits.apply();
         edits.commit();

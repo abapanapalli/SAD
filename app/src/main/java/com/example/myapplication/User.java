@@ -1,12 +1,16 @@
 package com.example.myapplication;
 
+import android.os.Parcelable;
+
+import java.io.Serializable;
+
 enum ActivityLevel {
     LIGHT,
     MODERATE,
     FREQUENT;
 }
 
-public class User {
+public class User implements Serializable {
 
     //Data
     private int heightft;
