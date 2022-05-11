@@ -10,6 +10,8 @@
       android:id="@+id/song_image"
       android:layout_width="50dp"
       android:layout_height="50dp"
+      android:adjustViewBounds="true"
+      android:scaleType="centerCrop"
       tools:src="@drawable/personalrecordlogo3"
       app:layout_constraintStart_toStartOf="parent"
       android:layout_marginStart="8dp"

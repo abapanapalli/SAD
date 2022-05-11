@@ -8,6 +8,13 @@
     tools:context=".MainActivityPlaylists"
     android:background="@color/background_color">
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/halfScreenGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.5" />
+
     <ImageView
         android:id="@+id/prLogo"
         android:layout_width="300sp"
@@ -45,12 +52,22 @@
         android:textColor="@color/bittersweet"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width = "match_parent"
-        android:layout_height = "match_parent"
+        android:layout_height = "wrap_content"
         tools:listitem = "@layout/recycler_view_item"
-        app:layout_constraintTop_toBottomOf="@+id/playlistLabel"
+        android:scrollbars="vertical"
+        android:layout_marginTop="380dp"
+        android:layout_marginBottom="170dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:clipToPadding="false"
+        app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@+id/backtohomebutton"
-        />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/halfScreenGuideline"
+        app:layout_constraintVertical_bias="1.0"/>
 
     <Button
         android:id="@+id/backtohomebutton"
