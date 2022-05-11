@@ -8,14 +8,6 @@
     tools:context=".MainActivityPlaylists"
     android:background="@color/background_color">
 
-<!--    <android.support.v7.widget.RecyclerView-->
-<!--        android:id="@id/recyclerview"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        />-->
-
-
-
     <ImageView
         android:id="@+id/prLogo"
         android:layout_width="300sp"
@@ -51,6 +43,14 @@
         android:textSize="30sp"
         android:fontFamily= "@font/ubuntu_bold"
         android:textColor="@color/bittersweet"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width = "match_parent"
+        android:layout_height = "match_parent"
+        tools:listitem = "@layout/recycler_view_item"
+        app:layout_constraintTop_toBottomOf="@+id/playlistLabel"
+        app:layout_constraintBottom_toTopOf="@+id/backtohomebutton"
+        />
 
     <Button
         android:id="@+id/backtohomebutton"
