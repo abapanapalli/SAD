@@ -1,11 +1,15 @@
 package com.example.myapplication;
 
+import android.content.Context;
+
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class MasterSong {
+public class MasterSong implements Serializable {
 
     // Data
 
@@ -26,15 +30,16 @@ public class MasterSong {
 
     /**
      * Loads a list of songs from a given text file
-     * @param source the name of the file as an absolute path
+     * @param inputStream the name of the file as an absolute path
      */
 
-    public void load(String source)
+    public void load(InputStream inputStream)
     {
         // Construct the Scanner and File objects for reading
-        try  {
-            File inputFile = new File(source);
-            Scanner in = new Scanner(inputFile);
+//        try  {
+            Scanner in = new Scanner(inputStream);
+
+//            InputStream is = getResources().openRawResource(resourceId);
 
             // Read the input file
             while(in.hasNextLine()) {
@@ -42,14 +47,15 @@ public class MasterSong {
                 String[] fields = line.split(",");
                 Song song = new Song(Integer.parseInt(fields[0]), fields[1], fields[2], Double.parseDouble(fields[3]), Double.parseDouble(fields[4]), Double.parseDouble(fields[5]), fields[6]);
                 songs.add(song);
+                // System.out.println(line);
             }
 
             in.close();
-        }
-        catch (FileNotFoundException fileEx)  {
-            //this.source = null;
-            fileEx.printStackTrace();
-        }
+//        }
+//        catch (FileNotFoundException fileEx)  {
+//            //this.source = null;
+//            fileEx.printStackTrace();
+//        }
     }
 //
 //	/**

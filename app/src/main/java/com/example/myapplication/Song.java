@@ -1,6 +1,8 @@
 package com.example.myapplication;
 
-public class Song {
+import java.io.Serializable;
+
+public class Song implements Serializable {
 
     // Data
 

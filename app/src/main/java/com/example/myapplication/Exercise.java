@@ -1,5 +1,10 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.util.Log;
+
+import java.io.File;
+import java.io.InputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -36,13 +41,16 @@ public class Exercise implements Serializable {
     String genre;
 
     //Constructors
-    public Exercise(User u, int lengthofrun)
+    public Exercise(User u, int lengthofrun, Context mContext)
     {
         user = u;
         duration = lengthofrun * 60;
         seconds = new double[lengthofrun * 60];
         songs = new MasterSong();
-        songs.load("app/src/main/res/raw/clean_music_genre_data.csv");
+        InputStream is =
+                mContext.getResources().openRawResource(R.raw.clean_music_data_genre_sample);
+        songs.load(is);
+        Log.d("Abhinav", "Number of songs in MasterSong List " + songs.getSongs().size());
     }
 
     ///Methods
@@ -133,6 +141,7 @@ public class Exercise implements Serializable {
         songList = new ArrayList<Song>();
         ArrayList<Integer> songIDs = new ArrayList<Integer>();
         ArrayList<Double> songDurations = new ArrayList<Double>();
+        Log.d("Abhinav", "Number of songs in MasterSong List " + songs.getSongs().size());
         for (Song s: songs.getSongs()) {
             if (s.getGenre().equals(genre)) {
                 songIDs.add(s.getID());

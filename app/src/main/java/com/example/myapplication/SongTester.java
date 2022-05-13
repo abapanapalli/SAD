@@ -4,8 +4,8 @@ public class SongTester {
 
     public static void main(String[] args) {
         MasterSong songs = new MasterSong();
-        songs.load("app/src/main/res/raw/clean_music_genre_data.csv");
-        songs.printSongs();
+//        songs.load("app/src/main/res/raw/clean_music_genre_data.csv");
+//        songs.printSongs();
     }
 }
 

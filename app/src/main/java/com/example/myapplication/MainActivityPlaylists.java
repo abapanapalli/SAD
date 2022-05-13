@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -31,14 +32,16 @@ public class MainActivityPlaylists extends AppCompatActivity {
 
         Exercise exercise = (Exercise) getIntent().getSerializableExtra("exercise");
 
-        backtohome = (Button) findViewById(R.id.backtohomebutton);
-        backtohome.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);
-                startActivity(intent);
-            }
-        });
+        Log.d("Abhinav", "Exercise Object " + exercise);
+
+//        backtohome = (Button) findViewById(R.id.backtohomebutton);
+//        backtohome.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);
+//                startActivity(intent);
+//            }
+//        });
 
         exercise.setSongs();
 
@@ -78,5 +81,7 @@ public class MainActivityPlaylists extends AppCompatActivity {
             Playlist song = new Playlist(songName[i], songArtist[i], imageResourceId[i]);
             playlistArrayList.add(song);
         }
+
+        myAdapter.notifyDataSetChanged();
     }
 }

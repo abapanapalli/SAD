@@ -29,7 +29,8 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
     @Override
     public Adapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        View v = LayoutInflater.from(context).inflate(R.layout.list_item, parent, false);
+        View v = LayoutInflater.from(context).inflate(R.layout.recycler_view_item, parent,
+                false);
 
         return new MyViewHolder(v);
     }
@@ -40,7 +41,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         Playlist playlist = playlistArrayList.get(position);
         holder.songName.setText(playlist.name);
         holder.songArtist.setText(playlist.artist);
-        holder.titleImage.setImageResource(playlist.titleImage);
+//        holder.titleImage.setImageResource(playlist.titleImage);
 
     }
 
@@ -59,7 +60,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
             super(itemView);
             songName = itemView.findViewById(R.id.song_name);
             songArtist = itemView.findViewById(R.id.song_artist);
-            titleImage = itemView.findViewById(R.id.song_image);
+//            titleImage = itemView.findViewById(R.id.song_image);
         }
     }
 
