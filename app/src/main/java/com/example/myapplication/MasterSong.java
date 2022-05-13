@@ -33,44 +33,18 @@ public class MasterSong implements Serializable {
      * @param inputStream the name of the file as an absolute path
      */
 
-    public void load(InputStream inputStream)
-    {
+    public void load(InputStream inputStream) {
         // Construct the Scanner and File objects for reading
-//        try  {
-            Scanner in = new Scanner(inputStream);
-
-//            InputStream is = getResources().openRawResource(resourceId);
-
-            // Read the input file
-            while(in.hasNextLine()) {
-                String line = in.nextLine();
-                String[] fields = line.split(",");
-                Song song = new Song(Integer.parseInt(fields[0]), fields[1], fields[2], Double.parseDouble(fields[3]), Double.parseDouble(fields[4]), Double.parseDouble(fields[5]), fields[6]);
-                songs.add(song);
-                // System.out.println(line);
-            }
-
-            in.close();
-//        }
-//        catch (FileNotFoundException fileEx)  {
-//            //this.source = null;
-//            fileEx.printStackTrace();
-//        }
+        Scanner in = new Scanner(inputStream);
+        // Read the input file
+        while(in.hasNextLine()) {
+            String line = in.nextLine();
+            String[] fields = line.split(",");
+            Song song = new Song(Integer.parseInt(fields[0]), fields[1], fields[2], Double.parseDouble(fields[3]), Double.parseDouble(fields[4]), Double.parseDouble(fields[5]), fields[6]);
+            songs.add(song);
+        }
+        in.close();
     }
-//
-//	/**
-//	 * Loads a list of songs from a given file that is selected from a pop-up dialog window
-//	 */
-//
-//	public void pick()
-//	{
-//		JFileChooser chooser = new JFileChooser(".");
-//		if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION)
-//		{
-//			load(chooser.getSelectedFile().getAbsolutePath());
-//		}
-//	}
-
 
     /**
      * Prints the songs in the list
@@ -98,14 +72,4 @@ public class MasterSong implements Serializable {
         return songs;
     }
 
-//    public void sortBPM() {
-//        int min = songs.getTempo(0);
-//        for (int i = 1; i < songs.size(); i++) {
-//            if(songs.get(i) < min) {
-//                min = songs.get(i);
-//            }
-//        }
-//        songs.remove((Integer) min);
-//        songs.add(0, min);
-//    }
 }

@@ -100,7 +100,7 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         weight = runningData.getInt("weight",0);
         heightft = runningData.getInt("height in feet", 0);
         heightin = runningData.getInt("height in inches",0);
-       activityLevel = runningData.getInt("activity level",0);
+        activityLevel = runningData.getInt("activity level",0);
     }
     public void updateViews(){
         ageInput.setText(String.valueOf(age));

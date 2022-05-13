@@ -48,6 +48,7 @@ public class Exercise implements Serializable {
      * @param lengthofrun the duration of the run
      * @param mContext
      */
+
     public Exercise(User u, int lengthofrun, Context mContext)
     {
         user = u;
@@ -65,6 +66,7 @@ public class Exercise implements Serializable {
      * Uses the type of run selected by the user to determine the ideal heart rate progression for the run based on information from the User object
      * @param userRun the type of run selected by the user
      */
+
     public void setTypeofRun(TypeofRun userRun) {
         run = userRun;
         switch(run){
@@ -106,6 +108,7 @@ public class Exercise implements Serializable {
      * Sets the genre of music for the playlist created for the run
      * @param userGenre the genre selected by the user
      */
+
     public void setGenreString(Genre userGenre) {
         runGenre = userGenre;
         switch(runGenre){
@@ -155,6 +158,7 @@ public class Exercise implements Serializable {
     /**
      * Sets the songs in the playlist based on the ideal heart rate progression for the selected type of run and the selected genre of music
      */
+
     public void setSongs() {
         songList = new ArrayList<Song>();
         ArrayList<Integer> songIDs = new ArrayList<Integer>();
@@ -206,6 +210,7 @@ public class Exercise implements Serializable {
      * Returns the playlist of songs created
      * @return the playlist of songs created
      */
+    
     public ArrayList<Song> getSongList() {
         return songList;
     }

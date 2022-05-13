@@ -30,6 +30,7 @@ public class MainActivityPlaylists extends AppCompatActivity {
      * calls the layout and behavior of the playlist page upon opening the page
      * @param savedInstanceState Bundle object expected by the onCreate method
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
