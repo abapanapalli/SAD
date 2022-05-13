@@ -56,6 +56,12 @@ public class MasterSong implements Serializable {
         }
     }
 
+    /**
+     * Method which finds the ID of a given song in the master dataset
+     * @param inputID the ID of the given song
+     * @return the ID value of the song
+     */
+
     public int findID(int inputID) {
         int i = 0;
         int finalVal = 0;
@@ -67,6 +73,11 @@ public class MasterSong implements Serializable {
         }
         return finalVal;
     }
+
+    /**
+     * A method which returns the ArrayList of all the songs in the dataset
+     * @return songs all the songs
+     */
 
     public ArrayList<Song> getSongs(){
         return songs;

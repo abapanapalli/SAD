@@ -23,14 +23,11 @@ Button settingsbutton;
 
             @Override
             public void onClick(View view) {
-                      Intent intent = new Intent(MainActivityHomePage.this,MainActivitySetup.class);
-                      startActivity(intent);
+                Intent intent = new Intent(MainActivityHomePage.this,MainActivitySetup.class);
+                startActivity(intent);
 
             }
         });
-
-
-
 
         runbutton = (Button) findViewById(R.id.StartARunButton);
         runbutton.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +36,7 @@ Button settingsbutton;
                 Intent intent = new Intent(MainActivityHomePage.this,MainActivityRunPage.class);
                 intent.putExtra("user", u);
                 startActivity(intent);
+            }
+        });
     }
-
-});}}
+}
