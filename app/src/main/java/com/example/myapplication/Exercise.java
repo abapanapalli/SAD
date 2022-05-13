@@ -54,8 +54,7 @@ public class Exercise implements Serializable {
         duration = lengthofrun * 60;
         seconds = new double[lengthofrun * 60];
         songs = new MasterSong();
-        InputStream is =
-                mContext.getResources().openRawResource(R.raw.clean_music_data_genre_sample);
+        InputStream is = mContext.getResources().openRawResource(R.raw.clean_music_genre_data);
         songs.load(is);
         Log.d("Abhinav", "Number of songs in MasterSong List " + songs.getSongs().size());
     }

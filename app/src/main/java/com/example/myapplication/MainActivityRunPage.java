@@ -49,11 +49,6 @@ EditText durationInput;
 
         User u = (User) getIntent().getSerializableExtra("user");
 
-        Context mContext = getApplicationContext();
-
-        Log.d("Abhinav", "Height" + u.getHeightInches());
-
-
         submitrun = (Button) findViewById(R.id.submitbutton2);
         submitrun.setOnClickListener(new View.OnClickListener() {
             /**
@@ -71,60 +66,11 @@ EditText durationInput;
                     Toast.makeText(MainActivityRunPage.this,"Please fill in all the required fields",Toast.LENGTH_SHORT).show();
                 }
                 else {
-                    duration = Integer.valueOf(durationInput.getText().toString());
-                    Exercise exercise = new Exercise(u,duration, mContext);
-                    switch(typeofrun){
-                        case 0:
-                            exercise.setTypeofRun(TypeofRun.RECOVERY);
-                            break;
-                        case 1:
-                            exercise.setTypeofRun(TypeofRun.BASE);
-                            break;
-                        case 2:
-                            exercise.setTypeofRun(TypeofRun.PROGRESSION);
-                            break;
-                        default:
-                            exercise.setTypeofRun(TypeofRun.PROGRESSION);
-                    }
-                    switch(genrechoice){
-                        case 0:
-                            exercise.setGenreString(Genre.CLASSICAL);
-                            break;
-                        case 1:
-                            exercise.setGenreString(Genre.JAZZ);
-                            break;
-                        case 2:
-                            exercise.setGenreString(Genre.ELECTRONIC);
-                            break;
-                        case 3:
-                            exercise.setGenreString(Genre.ROCK);
-                            break;
-                        case 4:
-                            exercise.setGenreString(Genre.ALTERNATIVE);
-                            break;
-                        case 5:
-                            exercise.setGenreString(Genre.HIPHOP);
-                            break;
-                        case 6:
-                            exercise.setGenreString(Genre.BLUES);
-                            break;
-                        case 7:
-                            exercise.setGenreString(Genre.ANIME);
-                            break;
-                        case 8:
-                            exercise.setGenreString(Genre.RAP);
-                            break;
-                        case 9:
-                            exercise.setGenreString(Genre.COUNTRY);
-                            break;
-                        default:
-                            exercise.setGenreString(Genre.HIPHOP);
-                    }
-                    Log.d("Abhinav", "Height" + u.getHeightInches());
-                    Log.d("Abhinav", "Song List " + exercise);
-                    exercise.setSongs();
                     Intent intent = new Intent(MainActivityRunPage.this,MainActivityPlaylists.class);
-                    intent.putExtra("exercise", exercise);
+                    intent.putExtra("duration", durationInput.getText().toString());
+                    intent.putExtra("type of run", typeofrun = spinner.getSelectedItemPosition());
+                    intent.putExtra("genre", genrechoice = genre.getSelectedItemPosition());
+                    intent.putExtra("user", u);
                     startActivity(intent);
                 }
             }

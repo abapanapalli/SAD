@@ -18,10 +18,10 @@ public class Song implements Serializable {
 
     // Constructs a Song object which contains five parameters (title, artist, duration, tempo, and valence)
 
-    public Song(int id, String t, String a, double d, double bpm, double v, String g) {
+    public Song(int id, String a, String t, double d, double bpm, double v, String g) {
         ID = id;
-        title = t;
         artist = a;
+        title = t;
         duration = d;
         tempo = bpm;
         valence = v;
