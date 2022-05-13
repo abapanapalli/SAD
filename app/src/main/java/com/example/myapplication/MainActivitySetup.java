@@ -85,6 +85,9 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         updateViews();
     }
 
+    /**
+     * Saves the data entered by the user in a SharedPreferences object
+     */
     public void saveData(){
         SharedPreferences runningData = getSharedPreferences("runningData", MODE_PRIVATE);
         SharedPreferences.Editor edits = runningData.edit();
@@ -102,6 +105,9 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         Toast.makeText(this, "Your information has been saved!",Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Gets the data saved in shared preferences to populate the fields on the setup page
+     */
     public void loadData(){
         SharedPreferences runningData = getSharedPreferences("runningData", MODE_PRIVATE);
         age = runningData.getInt("age",0);
@@ -110,6 +116,10 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
         heightin = runningData.getInt("height in inches",0);
         activityLevel = runningData.getInt("activity level",0);
     }
+
+    /**
+     * Updates the fields on the setup page with the saved user inputted information
+     */
     public void updateViews(){
         ageInput.setText(String.valueOf(age));
         weightInput.setText(String.valueOf(weight));
