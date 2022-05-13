@@ -21,6 +21,10 @@ Spinner genre;
 private int typeofrun, duration, genrechoice;
 EditText durationInput;
 
+    /**
+     * calls the layout and behavior of the playlist page upon opening the page
+     * @param savedInstanceState Bundle object expected by the onCreate method
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +56,10 @@ EditText durationInput;
 
         submitrun = (Button) findViewById(R.id.submitbutton2);
         submitrun.setOnClickListener(new View.OnClickListener() {
+            /**
+             *
+             * @param v
+             */
             @Override
             public void onClick(View v) {
 

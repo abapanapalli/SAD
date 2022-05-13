@@ -24,7 +24,10 @@ public class MainActivityPlaylists extends AppCompatActivity {
     String[] songArtist;
     int[] imageResourceId;
 
-
+    /**
+     * calls the layout and behavior of the playlist page upon opening the page
+     * @param savedInstanceState Bundle object expected by the onCreate method
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -76,6 +79,9 @@ public class MainActivityPlaylists extends AppCompatActivity {
         getData();
     }
 
+    /**
+     * Adds songs in created in playlist to recycler view ArrayList to display on screen
+     */
     private void getData() {
         for(int i = 0; i < songName.length; i++) {
             Playlist song = new Playlist(songName[i], songArtist[i], imageResourceId[i]);
