@@ -102,6 +102,7 @@ public class MainActivityPlaylists extends AppCompatActivity {
              * Opens the home page and passes the user object back to the home page when the button is clicked
              * @param v the button view being clicked
              */
+
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);
@@ -139,6 +140,7 @@ public class MainActivityPlaylists extends AppCompatActivity {
     /**
      * Adds songs in created in playlist to recycler view ArrayList to display on screen
      */
+
     private void getData() {
         for(int i = 0; i < songName.length; i++) {
             Playlist song = new Playlist(songName[i], songArtist[i], imageResourceId[i]);

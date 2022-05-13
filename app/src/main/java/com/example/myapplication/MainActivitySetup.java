@@ -56,6 +56,10 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
 
         button = (Button) findViewById(R.id.savebutton);
         button.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Opens the home page, creates a User object using the inputted age, weight, hand height, and passes the User object to the home page when the button is clicked
+             * @param v the button view being clicked
+             */
             @Override
             public void onClick(View v) {
 

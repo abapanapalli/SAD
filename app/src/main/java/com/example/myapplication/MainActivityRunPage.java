@@ -53,8 +53,8 @@ EditText durationInput;
         submitrun = (Button) findViewById(R.id.submitbutton2);
         submitrun.setOnClickListener(new View.OnClickListener() {
             /**
-             *
-             * @param v
+             * Opens the playlist page and passes the user, duration, and type of run parameters to the playlist page when the button is clicked
+             * @param v the button view being clicked
              */
             @Override
             public void onClick(View v) {
