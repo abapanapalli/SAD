@@ -29,6 +29,10 @@ public class MainActivitySetup extends AppCompatActivity implements AdapterView.
 
 
     private Spinner spinner;
+    /**
+     * calls the layout and behavior of the setup page upon opening the app and page
+     * @param savedInstanceState Bundle object expected by the onCreate method
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

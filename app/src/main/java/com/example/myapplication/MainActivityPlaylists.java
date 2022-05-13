@@ -97,6 +97,10 @@ public class MainActivityPlaylists extends AppCompatActivity {
 
         backtohome = (Button) findViewById(R.id.backtohomebutton);
         backtohome.setOnClickListener(new View.OnClickListener() {
+            /**
+             * Opens the home page and passes the user object back to the home page when the button is clicked
+             * @param v the button view being clicked
+             */
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);

@@ -37,12 +37,12 @@
                 android:id="@+id/AppName"
                 android:layout_width="450sp"
                 android:layout_height="100sp"
+                android:layout_gravity="center"
                 android:layout_marginStart="61dp"
                 android:layout_marginEnd="61dp"
                 android:layout_marginBottom="40dp"
                 android:background="@color/orange_red_crayola"
                 android:fontFamily="@font/oswald"
-                android:layout_gravity="center"
                 android:text="@string/app_name"
                 android:textAlignment="center"
                 android:textColor="@color/white"
@@ -54,9 +54,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/bittersweet"
-                android:textSize="25sp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="@string/start_a_run" />
+                android:text="@string/start_a_run"
+                android:textSize="25sp" />
 
             <Button
                 android:id="@+id/SETTINGSBUTTON"
@@ -64,9 +64,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="@color/bittersweet"
-                android:textSize="25sp"
                 android:fontFamily="@font/ubuntu_bold"
-                android:text="@string/settings" />
+                android:text="@string/settings"
+                android:textSize="25sp" />
 
 
         </LinearLayout>
