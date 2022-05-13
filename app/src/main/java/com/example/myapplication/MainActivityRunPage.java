@@ -25,6 +25,7 @@ EditText durationInput;
      * calls the layout and behavior of the run page upon opening the page
      * @param savedInstanceState Bundle object expected by the onCreate method
      */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
