@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -23,6 +24,7 @@ public class MainActivityPlaylists extends AppCompatActivity {
     String[] songName;
     String[] songArtist;
     int[] imageResourceId;
+    int duration, typeofrun, genrechoice;
 
 
     @Override
@@ -30,18 +32,75 @@ public class MainActivityPlaylists extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_playlists);
 
-        Exercise exercise = (Exercise) getIntent().getSerializableExtra("exercise");
+        Context mContext = getApplicationContext();
 
-        Log.d("Abhinav", "Exercise Object " + exercise);
+        String durationInput = (String) getIntent().getSerializableExtra("duration");
+        duration = Integer.valueOf(durationInput);
+        typeofrun = (int) getIntent().getSerializableExtra("type of run");
+        genrechoice = (int) getIntent().getSerializableExtra("genre");
+        User u = (User) getIntent().getSerializableExtra("user");
 
-//        backtohome = (Button) findViewById(R.id.backtohomebutton);
-//        backtohome.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);
-//                startActivity(intent);
-//            }
-//        });
+        Exercise exercise = new Exercise(u,duration, mContext);
+
+        switch(typeofrun){
+            case 0:
+                exercise.setTypeofRun(TypeofRun.RECOVERY);
+                break;
+            case 1:
+                exercise.setTypeofRun(TypeofRun.BASE);
+                break;
+            case 2:
+                exercise.setTypeofRun(TypeofRun.PROGRESSION);
+                break;
+            default:
+                exercise.setTypeofRun(TypeofRun.PROGRESSION);
+        }
+        switch(genrechoice){
+            case 0:
+                exercise.setGenreString(Genre.CLASSICAL);
+                break;
+            case 1:
+                exercise.setGenreString(Genre.JAZZ);
+                break;
+            case 2:
+                exercise.setGenreString(Genre.ELECTRONIC);
+                break;
+            case 3:
+                exercise.setGenreString(Genre.ROCK);
+                break;
+            case 4:
+                exercise.setGenreString(Genre.ALTERNATIVE);
+                break;
+            case 5:
+                exercise.setGenreString(Genre.HIPHOP);
+                break;
+            case 6:
+                exercise.setGenreString(Genre.BLUES);
+                break;
+            case 7:
+                exercise.setGenreString(Genre.ANIME);
+                break;
+            case 8:
+                exercise.setGenreString(Genre.RAP);
+                break;
+            case 9:
+                exercise.setGenreString(Genre.COUNTRY);
+                break;
+            default:
+                exercise.setGenreString(Genre.HIPHOP);
+        }
+
+        exercise.setSongs();
+
+        backtohome = (Button) findViewById(R.id.backtohomebutton);
+        backtohome.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivityPlaylists.this,MainActivityHomePage.class);
+                intent.putExtra("user", u);
+                startActivity(intent);
+            }
+        });
 
         exercise.setSongs();
 
@@ -55,22 +114,15 @@ public class MainActivityPlaylists extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
 
         songName = new String[exercise.getSongList().size()];
-        for (int i = 0; i < songName.length; i++) {
-            for (Song song: exercise.getSongList()) {
-                songName[i] = song.getTitle();
-            }
-        }
-
         songArtist = new String[exercise.getSongList().size()];
-        for (int i = 0; i < songArtist.length; i++) {
-            for (Song song: exercise.getSongList()) {
-                songArtist[i] = song.getArtist();
-            }
-        }
-
         imageResourceId = new int[exercise.getSongList().size()];
-        for (int i = 0; i < songName.length; i++) {
+
+        int i = 0;
+        for (Song song: exercise.getSongList()) {
+            songName[i] = song.getTitle();
+            songArtist[i] = song.getArtist();
             imageResourceId[i] = R.drawable.personalrecordlogo3;
+            i++;
         }
 
         getData();

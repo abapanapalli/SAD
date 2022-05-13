@@ -3,6 +3,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
@@ -41,7 +42,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
         Playlist playlist = playlistArrayList.get(position);
         holder.songName.setText(playlist.name);
         holder.songArtist.setText(playlist.artist);
-//        holder.titleImage.setImageResource(playlist.titleImage);
+        holder.titleImage.setImageResource(playlist.titleImage);
 
     }
 
@@ -54,13 +55,13 @@ public class Adapter extends RecyclerView.Adapter<Adapter.MyViewHolder> {
 
         TextView songName;
         TextView songArtist;
-        ShapeableImageView titleImage;
+        ImageView titleImage;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             songName = itemView.findViewById(R.id.song_name);
             songArtist = itemView.findViewById(R.id.song_artist);
-//            titleImage = itemView.findViewById(R.id.song_image);
+            titleImage = itemView.findViewById(R.id.song_image);
         }
     }
 
