@@ -61,5 +61,6 @@
     <string name = "ageprompt">Age (in years):</string>
     <string name = "backtohome">Back to Home</string>
 
+    <string name = "warning">Warning: Some songs may contain explicit content.</string>
 
 </resources>
