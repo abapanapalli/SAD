@@ -111,8 +111,6 @@ public class MainActivityPlaylists extends AppCompatActivity {
             }
         });
 
-        exercise.setSongs();
-
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setHasFixedSize(true);
